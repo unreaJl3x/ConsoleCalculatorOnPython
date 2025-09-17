@@ -49,6 +49,32 @@ def CheckTypes (a : list,c:type) -> bool:
             return False
     return True
 
+def HUETA(list:list[str])->list:
+        nlist=[]
+        num = ""
+        print(list)
+        while(len(list)>0):
+            try:
+                int(list[0])
+                num+=str(list[0])
+                print("remoev ", list[0])
+                list.remove(list[0])
+                print(list)
+
+            except:
+                if (len(str(num))==0): num=list[0];list.remove(list[0])
+                else: num=int(num)
+                nlist.append(num)
+                num=''
+        try:
+            nlist.append(int(num))
+        except:
+            nlist.append(num)
+        print('nliust ',nlist)
+        return nlist
+
+
+
 def Schet (nums : list) -> int:
     print("Schet ",nums)
     while (not len(nums)<=1):
@@ -83,7 +109,8 @@ def main():
     print("MAth")
     userInput = input()
     Clear(userInput)
-    userInput = isNum(list(userInput))
+    userInput = HUETA(list(userInput))
+    userInput = isNum((userInput))
     print("result: "+ str(Schet(userInput)))
 
 main()
