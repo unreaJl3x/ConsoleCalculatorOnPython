@@ -49,7 +49,7 @@ def CheckTypes (a : list,c:type) -> bool:
             return False
     return True
 
-def HUETA(list:list[str])->list:
+def conInt(list:list[str])->list:
         nlist=[]
         num = ""
         print(list)
@@ -109,7 +109,7 @@ def main():
     print("MAth")
     userInput = input()
     Clear(userInput)
-    userInput = HUETA(list(userInput))
+    userInput = conInt(list(userInput))
     userInput = isNum((userInput))
     print("result: "+ str(Schet(userInput)))
 
